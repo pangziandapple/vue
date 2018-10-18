@@ -5,8 +5,10 @@ import HelloWorld from '@/components/HelloWorld'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'life',
+  /** 项目名 */
+  mode: 'history',
   base: '/life/',
+  /** 项目名 */
   routes: [
     {
       path: '/',
