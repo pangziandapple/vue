@@ -15,6 +15,10 @@
         <el-button type="success">重置</el-button>
       </el-row>
     </div>
+
+    <div id="registdiv">
+      <a>注册</a>
+    </div>
   </div>
 </template>
 
@@ -40,5 +44,11 @@ a {
 }
 .logindiv {
   margin-top:20px;
+}
+
+#registdiv a{
+  float: right;
+  font-size: 15px;
+  margin-right: 10px;
 }
 </style>
