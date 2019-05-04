@@ -17,7 +17,7 @@
                   <el-input type="password" v-model="form.passwd"></el-input>
                 </el-form-item>
                 <el-form-item>
-                  <el-button type="primary" @click="onSubmit">登录</el-button>
+                  <el-button type="primary" @click="login">登录</el-button>
                   <el-button type="info">取消</el-button>
                 </el-form-item>
               </el-form>
@@ -36,9 +36,22 @@ export default {
     return {
       msg: '精致的生活',
       form: {
-        userName: "张三",
-        passwd: "123456"
+        userName: '',
+        passwd: ''
       }
+    }
+  },
+  methods: {
+    login: function () {
+      var self = this
+      this.$http.post('/api/user/login', {
+        userName: self.form.userName,
+        passWord: self.form.passwd
+      }).then(function (res) {
+        alert(res.data.code + res.data.msg)
+      }, function (res) {
+        alert(res.status)
+      })
     }
   }
 }
