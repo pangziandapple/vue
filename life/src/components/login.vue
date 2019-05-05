@@ -49,6 +49,7 @@ export default {
         passWord: self.form.passwd
       }).then(function (res) {
         alert(res.data.code + res.data.msg)
+        this.$router.push('/index')
       }, function (res) {
         alert(res.status)
       })
